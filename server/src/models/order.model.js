@@ -19,8 +19,7 @@ export const getOrders = (userId) => {
   return ordersCollection.filter((coffee) => coffee.userId === userId);
 };
 
-// ! FALTA IMPLEMENTAR (NO SE USA EN EL PROYECTO)
-export const getOrderById = (id, userId) => {
+export const getOrderByIdCtrl = (id, userId) => {
   return (
     ordersCollection.find(
       (coffee) => coffee.id === id && coffee.userId === userId
@@ -28,8 +27,8 @@ export const getOrderById = (id, userId) => {
   );
 };
 
-// ! FALTA IMPLEMENTAR (NO SE USA EN EL PROYECTO)
-export const deleteOrderById = (id, userId) => {
+
+export const deleteOrderByIdCtrl = (id, userId) => {
   const deletedOrder = ordersCollection.find(
     (coffee) => coffee.id === id && coffee.userId === userId
   );
@@ -38,3 +37,4 @@ export const deleteOrderById = (id, userId) => {
   );
   return deletedOrder;
 };
+

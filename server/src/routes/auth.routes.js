@@ -1,8 +1,9 @@
 import { Router } from "express";
 import {
   signInCtrl,
-  getMeCtrl,
   signUpCtrl,
+  getMeCtrl,
+  signOutCtrl, // Importar el controlador de cierre de sesión
 } from "../controllers/auth.controller.js";
 import { validateJwt } from "../middlewares/validateJwt.js";
 import {
@@ -16,5 +17,7 @@ const authRouter = Router();
 authRouter.post("/sign-in", signInValidation, applyValidations, signInCtrl);
 authRouter.post("/sign-up", signUpValidation, applyValidations, signUpCtrl);
 authRouter.get("/me", validateJwt, getMeCtrl);
+authRouter.post("/sign-out", validateJwt, signOutCtrl);
 
 export { authRouter };
+
